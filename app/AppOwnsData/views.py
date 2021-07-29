@@ -24,10 +24,13 @@ def create_app():
 def home():
     users = User.query.all()
     logged_in_user = None
+    template = render_template('notauthorised.html')
     if session.get("user_id"):
         logged_in_user = User.query.get(session.get("user_id"))
-    return render_template('pbi.html', users=users, logged_in_user=logged_in_user)
-    #return render_template('pbi.html')
+        template = render_template('pbi.html', users=users, logged_in_user=logged_in_user)
+    
+    
+    return template
 
 @pbi.route('/powerbi/getembedinfo', methods=['GET'])
 def get_embed_info():

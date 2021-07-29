@@ -8,7 +8,13 @@
   {{ logged_in_user.description }}<br>
   {{ logged_in_user.location}}
 
-  <h2>Users from the db:</h2>
+  <h2>Power BI Report</h2> <br>
+
+  <object width="1200" height="800"> <embed src=/powerbi width="1200" height="800"> </embed></object>
+  <br><br>
+
+  <h2>Logged In Users</h2><br>
+
   {% if users %}
   {% for user in users %}
     {{ user.username }} {{ user.email }}
@@ -22,9 +28,9 @@
 {% endif %}
 
 
-<a href="/powerbi">view my power bi report</a>
 
-<object width="600" height="400"> <embed src=/powerbi width="1200" height="800"> </embed></object>
+
+
 
 
 
