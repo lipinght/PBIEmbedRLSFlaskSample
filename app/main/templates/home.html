@@ -4,25 +4,12 @@
 {% block content %}
 
 {% if session.get('user_id') %}
-  {{ logged_in_user.username }}<br>
-  {{ logged_in_user.description }}<br>
-  {{ logged_in_user.location}}
+ 
 
-  <h2>Power BI Report</h2> <br>
-
+  <h2>Power BI Report</h2>
+  <hr>
   <object width="1200" height="800"> <embed src=/powerbi width="1200" height="800"> </embed></object>
-  <br><br>
-
-  <h2>Logged In Users</h2><br>
-
-  {% if users %}
-  {% for user in users %}
-    {{ user.username }} {{ user.email }}
-    {% if logged_in_user.id == user.id %}
-    <- this is the currently logged in user
-    {% endif %}<br>
-  {% endfor %}
-  {% endif %}
+  <hr>
 {% else %}
   {% include 'home/_landing.html' %}
 {% endif %}

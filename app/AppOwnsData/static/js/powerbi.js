@@ -13,9 +13,9 @@ $(function () {
         tokenType: models.TokenType.Embed,
 
         // Enable this setting to remove gray shoulders from embedded report
-        // settings: {
-        //     background: models.BackgroundType.Transparent
-        // }
+        settings: {
+             background: models.BackgroundType.Transparent
+         }
     };
 
     $.ajax({

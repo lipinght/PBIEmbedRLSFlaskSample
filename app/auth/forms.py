@@ -1,5 +1,5 @@
 from flask_wtf import FlaskForm
-from wtforms.fields import StringField, PasswordField, SubmitField, BooleanField, RadioField, TextAreaField
+from wtforms.fields import StringField, PasswordField, SubmitField, SelectField, BooleanField, RadioField, TextAreaField
 from wtforms.fields.html5 import EmailField
 from wtforms.validators import InputRequired, DataRequired, EqualTo, Length, ValidationError, Email
 from app.models import User
@@ -35,11 +35,11 @@ class RegistrationForm(FlaskForm):
                                     InputRequired("Input is required!"),
                                     DataRequired("Data is required!")
                                 ])
-    location         = StringField("Your location (e.g. city, country)",
+    location         = SelectField("Location",choices=[('North','North'),('South','South'),('East','East'),('West','West')],
                                 validators=[
                                     InputRequired("Input is required!"),
-                                    DataRequired("Data is required!"),
-                                    Length(min=3, max=40, message="Location must be between 3 and 40 characters long")
+                                    DataRequired("Data is required!")
+                                    #Length(min=3, max=40, message="Location must be between 3 and 40 characters long")
                                 ])
     description      = TextAreaField("Description *",
                                 validators=[

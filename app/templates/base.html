@@ -4,17 +4,17 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title>{% block title %}{% endblock %}Power BI in a Flask</title>
+  <title>{% block title %}{% endblock %}Contoso Customer App</title>
 
   <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
   <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 
 <body>
-  <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
-    <div class="container">
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top" style="background-colour:#000000">
+    <div class="container" style="background-colour:#000000">
       <a href="{{ url_for('main.home') }}" class="navbar-brand">
-        <img src="{{ url_for('static', filename='images/logo.png') }}" height="40px">
+        <img src="{{ url_for('static', filename='images/Contoso_Health_horizontal.svg') }}" height="40px">
       </a>
       <button class="navbar-toggler" type="button"
               data-toggle="collapse" data-target="#navbarResponsive"

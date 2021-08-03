@@ -69,6 +69,7 @@ class PbiEmbedService:
         # request_body.identities.append({'datasets': dataset_id})
 
         request_body.identities.append({'username': username_id,'roles':[role_id],'datasets':[dataset_id]})
+        #request_body.reports.append({'settings':{'panes': {'pageNavigation': {'visible': 'true'}}}})
 
         if target_workspace_id is not None:
             request_body.targetWorkspaces.append({'id': target_workspace_id})
