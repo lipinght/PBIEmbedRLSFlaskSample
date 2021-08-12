@@ -46,7 +46,6 @@ def get_embed_info():
         return json.dumps({'errorMsg': config_result}), 500
     
     try:
-        #embed_info = PbiEmbedService().get_embed_params_for_single_report(current_app.config['WORKSPACE_ID'], current_app.config['REPORT_ID'])
         embed_info = PbiEmbedService().RLS(current_app.config['WORKSPACE_ID'], current_app.config['REPORT_ID'], current_app.config['USERNAME'],location)
         return embed_info
     except Exception as ex:

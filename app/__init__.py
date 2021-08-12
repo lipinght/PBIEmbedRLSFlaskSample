@@ -21,6 +21,8 @@ def create_app():
 
     app.config.from_object('app.config.BaseConfig')
 
+   # app.config.from_object('app.xconfig.BaseConfig')
+
     
     db.init_app(app)
 

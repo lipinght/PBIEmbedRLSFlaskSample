@@ -45,8 +45,7 @@ class PbiEmbedService:
 
     def get_embed_token_for_single_report_single_workspaceRLS(self, report_id, dataset_ids, username_id, role_id, target_workspace_id=None):
         '''Get Embed token for single report, multiple datasets, and an optional target workspace
-
-        Args:
+Args:
             report_id (str): Report Id
             dataset_ids (list): Dataset Ids
             target_workspace_id (str, optional): Workspace Id. Defaults to None.
@@ -61,13 +60,6 @@ class PbiEmbedService:
             request_body.datasets.append({'id': dataset_id})
 
         request_body.reports.append({'id': report_id})
-        # #add in username
-        # request_body.identities.append({'username': username_id})
-        # #add in roles
-        # request_body.identities.append({'roles': role_id})
-        # #add in dataset
-        # request_body.identities.append({'datasets': dataset_id})
-
         request_body.identities.append({'username': username_id,'roles':[role_id],'datasets':[dataset_id]})
         #request_body.reports.append({'settings':{'panes': {'pageNavigation': {'visible': 'true'}}}})
 
